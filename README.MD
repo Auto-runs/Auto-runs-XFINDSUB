@@ -1,65 +1,104 @@
-# XFINDSUB
+<p align="center">
+  <img src="https://img.shields.io/badge/XFINDSUB-Passive%20Subdomain%20Enumeration-blue?style=for-the-badge&logo=python" alt="XFINDSUB">
+</p>
 
-**XFINDSUB** is a passive subdomain enumeration tool with a clean and interactive CLI interface (powered by `rich` + `pyfiglet`).  
-It gathers subdomains from multiple public sources and optionally validates them with DNS resolution.  
+<p align="center">
+  <b>XFINDSUB</b> is a passive subdomain enumeration tool with a clean and interactive CLI interface.<br>
+  Powered by <a href="https://github.com/Textualize/rich">rich</a> + <a href="https://pypi.org/project/pyfiglet/">pyfiglet</a>.
+</p>
+
+<p align="center">
+  <a href="https://github.com/Auto-runs/Auto-runs-XFINDSUB/stargazers">
+    <img src="https://img.shields.io/github/stars/Auto-runs/Auto-runs-XFINDSUB?style=social" alt="Stars">
+  </a>
+  <a href="https://github.com/Auto-runs/Auto-runs-XFINDSUB/issues">
+    <img src="https://img.shields.io/github/issues/Auto-runs/Auto-runs-XFINDSUB" alt="Issues">
+  </a>
+  <a href="https://github.com/Auto-runs/Auto-runs-XFINDSUB/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Auto-runs/Auto-runs-XFINDSUB" alt="License">
+  </a>
+  <img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python">
+</p>
 
 ---
 
 ## ✨ Features
-- 🔎 Passive subdomain enumeration from:
+- 🔍 Passive subdomain enumeration from:
   - [crt.sh](https://crt.sh)
-  - [AlienVault OTX](https://otx.alienvault.com/)
-  - [Bufferover](https://dns.bufferover.run/)
-- ✅ Optional DNS resolution (check if subdomains are alive)  
-- 📂 Output to **stdout**, **TXT**, or **JSON**  
-- 🎨 Fancy CLI interface (banner + spinner progress)  
-- ⚡ Supports single domain or multiple domains (via list file)  
+  - [AlienVault OTX](https://otx.alienvault.com)
+  - [Bufferover](https://dns.bufferover.run)
+- ✅ Optional DNS resolution (check if subdomains are alive)
+- 📂 Output to `stdout`, `TXT`, or `JSON`
+- 🎨 Fancy CLI interface (banner + spinner progress)
+- ⚡ Supports single domain or multiple domains (via list file)
 
 ---
+<p align="center"> <img src="photo.png" alt="demo" width="700"> </p>
 
-## 📦 Installation
-Clone the repository and install dependencies:
+## ⚙️ Installation
 ```bash
-git clone https://github.com/username/xfindsub.git
-cd xfindsub
+git clone https://github.com/Auto-runs/Auto-runs-XFINDSUB.git
+
+cd Auto-runs-XFINDSUB
+
 pip install -r requirements.txt
-
-## 🚀 Usage 
-
+ 
+```
+## 📌 Usage
 ```bash
-# Single domain
+🔹 Single domain
+
 python xfindsub.py -d example.com
+```
+```bash
+🔹 List of domains
 
-# List of domains
 python xfindsub.py -l domains.txt
+```
+```bash
+🔹 With DNS resolution
 
-# With DNS resolution
 python xfindsub.py -d example.com --resolve
+```
+```bash
+🔹 Output results (TXT)
 
-# Output results (TXT)
 python xfindsub.py -d example.com -o result.txt
+```
+```bash
+🔹 Output results (JSON)
 
-# Output results (JSON)
 python xfindsub.py -d example.com --json result.json
+```
+```bash
+🔹 Silent mode (only print subdomains)
 
-# Silent mode (only print subdomains)
 python xfindsub.py -d example.com --silent
+```
+```bash
+🔹 Custom sources
 
-# Custom sources
 python xfindsub.py -d example.com --sources crtsh,otx
+```
 
-📂 Project Structure
-xfindsub/
-│── xfindsub.py        # main program
-│── resolver.py        # async DNS resolver
-│── sources/
-│   ├── crtsh.py
-│   ├── otx.py
-│   ├── bufferover.py
-│── requirements.txt
-└── README.md
+📌 Example Output
+```bash
+XFINDSUB - Passive Subdomain Finder
 
-📝 Disclaimer
+[+] Target  : facebook.com
+[+] Sources : crtsh, otx, bufferover
+[+] Resolve : ON
 
-This project is intended for educational purposes, penetration testing, bug bounty, and research only.
-Do not use it for illegal activities.
+[+] Found subdomains:
+- m.facebook.com
+- developers.facebook.com
+- business.facebook.com
+- upload.facebook.com
+- static.facebook.com
+```
+
+⚠️ Disclaimer
+
+This tool is developed for educational and research purposes only.
+Use it solely on domains that you are authorized to test.
+I (the author) am not responsible for any misuse of this tool.
