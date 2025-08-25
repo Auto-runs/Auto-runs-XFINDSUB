@@ -1,0 +1,5 @@
+rich
+httpx
+aiohttp
+dnspython
+pyfiglet
