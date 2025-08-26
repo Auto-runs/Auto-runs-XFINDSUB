@@ -37,7 +37,7 @@
 
 ## ⚙️ Installation
 ```bash
-git clone https://github.com/Auto-runs/Auto-runs-XFINDSUB.git
+git clone https://github.com/Auto-runs/XFINDSUB.git
 
 cd Auto-runs-XFINDSUB
 
