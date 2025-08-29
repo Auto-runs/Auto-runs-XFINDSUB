@@ -39,7 +39,11 @@
 ```bash
 git clone https://github.com/Auto-runs/XFINDSUB.git
 
-cd Auto-runs-XFINDSUB
+cd XFINDSUB
+
+python -m venv venv
+
+source venv/bin/activate
 
 pip install -r requirements.txt
  
