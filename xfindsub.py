@@ -11,7 +11,7 @@ from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 import pyfiglet
 
-# Console untuk LOG ke stderr (biar hasil subdomain ke stdout tetap bersih)
+
 log = Console(stderr=True, highlight=False, soft_wrap=False)
 
 BANNER_COLOR = "bold cyan"
@@ -66,7 +66,7 @@ async def run_sources(domain: str, enabled: list[str]) -> set[str]:
             subs.update(res)
             prog.update(task_map[name], description=f"[✔] {name}: {len(res)} found")
 
-    # Normalisasi hasil
+    
     cleaned = {s.lower().strip().rstrip(".") for s in subs if s and "." in s}
     return cleaned
 
